@@ -6,6 +6,7 @@ const outputPath = resolve(__dirname, 'docs');
 const webpack = require('webpack');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -62,16 +63,16 @@ module.exports = {
     ]
   },
 
-
-
   plugins: [
-    new ExtractTextPlugin({ filename: 'bundle.css', disable: false, allChunks: true })
+    new CleanWebpackPlugin([
+      outputPath
+    ])
+    , new ExtractTextPlugin({ filename: 'bundle.css', disable: false, allChunks: true })
+    , CopyWebpackPlugin([
+      { from: '_config.yml' }])
     , new HtmlWebpackPlugin({
       template: 'index.html',
     })
-    , new CleanWebpackPlugin([
-      outputPath
-    ])
     , new webpack.HotModuleReplacementPlugin()
     , new webpack.NamedModulesPlugin()
   ]
