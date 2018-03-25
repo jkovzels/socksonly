@@ -1,6 +1,9 @@
 @import '../../node_modules/normalize.css/normalize.css';
 //read: https://www.thoughtco.com/using-import-in-css-3464234
 
+@import "custom";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid";
+
 @import 'config';
 
 body {

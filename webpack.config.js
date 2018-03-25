@@ -31,15 +31,31 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
-      }
-      , {
-        test: /\.scss$/,
+      },
+      {
+        test: /\.(scss)$/,
         use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-          fallback: 'style-loader'
-          , use: [
-            'css-loader?sourceMap',
-            'sass-loader?includePaths[]=' + resolve(__dirname, 'styles'),
-          ]
+          use: [{
+            loader: 'css-loader', // translates CSS into CommonJS modules
+            options: {
+              sourceMap: true
+            }
+          }, {
+            loader: 'postcss-loader', // Run post css actions
+            options: {
+              plugins: function () { // post css plugins, can be exported to postcss.config.js
+                return [
+                  require('precss'),
+                  require('autoprefixer')
+                ];
+              }
+            }
+          }, {
+            loader: 'sass-loader', // compiles SASS to CSS
+            options: {
+              includePaths: [resolve(__dirname, 'styles')]
+            }
+          }]
         }))
       }
       , {
@@ -69,7 +85,8 @@ module.exports = {
     ])
     , new ExtractTextPlugin({ filename: 'bundle.css', disable: false, allChunks: true })
     , CopyWebpackPlugin([
-      { from: '_config.yml' }])
+      { from: '_config.yml' }
+    , { from: 'CNAME' }])
     , new HtmlWebpackPlugin({
       template: 'index.html',
     })
