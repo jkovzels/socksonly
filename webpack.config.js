@@ -40,8 +40,8 @@ module.exports = function (env, argv) {
           exclude: /node_modules/
         },
         {
-          test: /\.(scss)$/,
-          use: [
+          test: /\.(scss)$/
+          , use: [
             'css-hot-loader'
             , MiniCssExtractPlugin.loader
             , {

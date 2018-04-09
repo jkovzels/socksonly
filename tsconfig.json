@@ -2,13 +2,14 @@
   "compilerOptions": {
     "outDir": "./docs/",
     "noImplicitAny": true,
-    "module": "commonjs",
+    "module": "umd",
     "target": "es5",
     "jsx": "react",
     "allowJs": false,
     "sourceMap": true
-  },
-  "include": [
+  }
+  , "compileOnSave": false
+  , "include": [
     "./src/**/*"
   ]
 }
