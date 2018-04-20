@@ -8,7 +8,9 @@ I hope you commited everithing the last time you toched things.
 
 run `npm outdated` to see that is outdated.
 
-or run `ncu`. The command you can use after `npm install -g npm-check-updates`. It checks for last versions of depending packages and compares with version listed in `package.json`. Then run 'ncu -u' or `ncu --updateAll` to *really* update the files.
+or run `ncu`. The command you can use after `npm install -g npm-check-updates`. 
+It checks for last versions of depending packages and compares with version listed in `package.json`. 
+Then run 'ncu -u' or `ncu -a` to *really* update the files.
 
 ## Run stuff
 

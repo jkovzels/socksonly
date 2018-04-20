@@ -6,8 +6,10 @@ const outputPath = resolve(__dirname, 'docs');
 const webpack = require('webpack');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = function (env, argv) {
@@ -19,7 +21,7 @@ module.exports = function (env, argv) {
     mode: mode,
     devtool: env.production ? 'eval-source-map' : 'eval-source-map',
     context: resolve(__dirname, "src"),
-    entry: './index.ts',
+    entry: './index.tsx',
 
     resolve: {
       extensions: ['.webpack.js', '.html', '.ts', '.tsx', '.js', '.jsx', '.scss', '.css', '.jpg', '.png']
@@ -99,11 +101,18 @@ module.exports = function (env, argv) {
       , new CleanWebpackPlugin([
         outputPath
       ])
-      , CopyWebpackPlugin([
-        { from: '_config.yml' }
-        , { from: 'CNAME' }])
       , new HtmlWebpackPlugin({
         template: 'index.html',
+      })
+      , new CopyWebpackPlugin([
+          { from: '_config.yml' }
+        , { from: 'CNAME' },
+        , { from: '../node_modules/react/umd/react.development.js', to: 'externals'}
+        , { from: '../node_modules/react-dom/umd/react-dom.development.js', to: 'externals'}
+      ])
+      , new HtmlWebpackIncludeAssetsPlugin({
+        assets: ['externals/react.development.js', 'externals/react-dom.development.js'],
+        append: false
       })
       , new webpack.HotModuleReplacementPlugin()
     ]
@@ -113,6 +122,10 @@ module.exports = function (env, argv) {
       , path: outputPath
       , publicPath: ""
     },
+    externals: {
+      "react": "React",
+      "react-dom": "ReactDOM"
+  },
 
     stats: {
       errorDetails: true
