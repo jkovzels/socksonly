@@ -2,33 +2,52 @@
 //read: https://www.thoughtco.com/using-import-in-css-3464234
 
 @import "custom";
+@import "dev";
 @import "../../node_modules/bootstrap/dist/css/bootstrap-grid";
 
 @import 'config';
 
 body {
 	background-color: $bg;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 900;
+}
+
+input {
+	border: 2px solid $funky_yellow;
+	padding: 8px;
+	font-size: 20px;
+	margin: 4px;
+}
+input[type=submit]{
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+label {
+	text-transform: uppercase;
+	
+
 }
 
 @mixin bold-font() {
 	font-family: "Arial Black", Sans-Serif;
 	font-weight: 900;
-	font-size: 240px;
+	font-size: 20vw;
 	letter-spacing: -0.05em;
-	line-height: 240px;
+	line-height: 0.9em;
 	text-transform: uppercase;
 	margin: 0;
+	vertical-align: text-top;
 }
 
 .first-view{
 	height: 100vh;
-	width: 100%;
 	overflow: hidden;
 }
 .bold-move-step1 {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
 	h1{
 		color: $font_white;
 		@include bold-font();
@@ -41,8 +60,19 @@ body {
 	// }
 }
 .bold-move-step2{
-	h1{
+	
+	background-image: $funky_bg;
+	h1, h2, h3{
 		@include bold-font();
+		color: $funky_yellow;
+	}
+	h2 {
+		padding: 10vh 0;
+		font-size: 5vw;
+		color: $funky_magenta;
+	}
+	h3 {
+		font-size: 3vw;
 	}
 }
 

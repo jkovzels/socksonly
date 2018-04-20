@@ -340,6 +340,9 @@ template {
 [hidden] {
   display: none;
 }
+.red {
+  background-color: #ffbbbb; }
+
 /*!
  * Bootstrap Grid v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -1460,35 +1463,59 @@ html {
   .align-self-xl-stretch {
     align-self: stretch !important; } }
 body {
-  background-color: #fff; }
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900; }
+
+input {
+  border: 2px solid #f0ff1d;
+  padding: 8px;
+  font-size: 20px;
+  margin: 4px; }
+
+input[type=submit] {
+  font-weight: 900;
+  text-transform: uppercase; }
+
+label {
+  text-transform: uppercase; }
 
 .first-view {
   height: 100vh;
-  width: 100%;
   overflow: hidden; }
 
 .bold-move-step1 {
   position: absolute;
-  bottom: 0;
-  width: 100%; }
+  bottom: 0; }
   .bold-move-step1 h1 {
     color: #fff;
     font-family: "Arial Black", Sans-Serif;
     font-weight: 900;
-    font-size: 240px;
+    font-size: 20vw;
     letter-spacing: -0.05em;
-    line-height: 240px;
+    line-height: 0.9em;
     text-transform: uppercase;
-    margin: 0; }
+    margin: 0;
+    vertical-align: text-top; }
 
-.bold-move-step2 h1 {
-  font-family: "Arial Black", Sans-Serif;
-  font-weight: 900;
-  font-size: 240px;
-  letter-spacing: -0.05em;
-  line-height: 240px;
-  text-transform: uppercase;
-  margin: 0; }
+.bold-move-step2 {
+  background-image: linear-gradient(to bottom left, #f0ff1d, #ff1fe1); }
+  .bold-move-step2 h1, .bold-move-step2 h2, .bold-move-step2 h3 {
+    font-family: "Arial Black", Sans-Serif;
+    font-weight: 900;
+    font-size: 20vw;
+    letter-spacing: -0.05em;
+    line-height: 0.9em;
+    text-transform: uppercase;
+    margin: 0;
+    vertical-align: text-top;
+    color: #f0ff1d; }
+  .bold-move-step2 h2 {
+    padding: 10vh 0;
+    font-size: 5vw;
+    color: #ff1fe1; }
+  .bold-move-step2 h3 {
+    font-size: 3vw; }
 
 .clear:after {
   content: "";
