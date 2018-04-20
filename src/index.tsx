@@ -9,5 +9,5 @@ console.log("Socks on, up and running");
 
 ReactDOM.render(
     <LandingView/>,
-    document.body
+    document.getElementById("root")
 );

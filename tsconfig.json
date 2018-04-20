@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./docs/",
     "noImplicitAny": true,
-    "module": "umd",
+    "module": "commonjs",
     "target": "es5",
     "jsx": "react",
     "allowJs": false,
