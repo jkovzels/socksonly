@@ -14,7 +14,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = function (env, argv) {
   env = env || {};
-  env.production = env.production || false;
+  env.production = env.production || true;
   const mode = env.production ? 'production' : 'development';
   console.log("environment mode: " + mode);
   return {

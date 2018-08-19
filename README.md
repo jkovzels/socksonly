@@ -1,10 +1,10 @@
 # Getting started ... again
 
-You probably was very busy last few monthes and forgot everything. Here are soe tips to get you started.
+You probably was very busy last few monthes and forgot everything. Here are some tips to get you started.
 
 I hope you commited everithing the last time you toched things.
 
-## Updating packaged
+## Updating packages
 
 run `npm outdated` to see that is outdated.
 

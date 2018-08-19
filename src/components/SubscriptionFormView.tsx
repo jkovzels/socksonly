@@ -3,7 +3,7 @@ import * as ReactDom from "react-dom";
 
 export class SubscriptionFormView extends React.Component<{}, {}> {
     render() {
-        var trapStyle = {
+        const trapStyle = {
             position: 'absolute',
             left: '-5000px'
         } as React.CSSProperties;
@@ -13,7 +13,7 @@ export class SubscriptionFormView extends React.Component<{}, {}> {
             name="mc-embedded-subscribe-form" className="subscription-form">
             <label htmlFor="mce-EMAIL">Email Address </label>
             <br />
-            <input type="email" name="EMAIL" id="mce-EMAIL" />
+            <input type="email" name="EMAIL" id="mce-EMAIL" required/>
             <div style={trapStyle} aria-hidden="true">
                 <input type="text" name="b_ba52caf8b1fd6f20f4dc582f0_8591b179f4" tabIndex={-1} />
             </div>

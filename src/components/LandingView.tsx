@@ -3,12 +3,13 @@ import { SubscriptionFormView } from "./SubscriptionFormView";
 
 export class LandingView extends React.Component<{}, {}> {
     render() {
+        const heroStyle = {
+            height: '600px'
+        } as React.CSSProperties
         return <div>
-            <div className="container-fluid first-view cover">
-                <div className=" row">
-                    <div className="bold-move-step1 col-sm">
-                        <h1>Socks</h1>
-                    </div>
+            <div className="first-view cover" style={heroStyle}>
+                <div className="bold-move-step1">
+                    <h1>Socks</h1>
                 </div>
             </div>
             <div className="container-fluid bold-move-step2">
@@ -21,7 +22,7 @@ export class LandingView extends React.Component<{}, {}> {
                 <div className="row">
                     <div className="col-sm-7">
                         <h3>
-                            Get notification and stand with us when we start pushing socks on all colors, sorts, and sizes all over the world
+                            Get notification and stand with us when we start pushing socks of all colors, sorts, and sizes all over the world
                     </h3>
                     </div>
                     <div className="col-sm-5">

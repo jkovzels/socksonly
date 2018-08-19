@@ -26,8 +26,6 @@ input[type=submit]{
 
 label {
 	text-transform: uppercase;
-	
-
 }
 
 @mixin bold-font() {
@@ -41,9 +39,9 @@ label {
 	vertical-align: text-top;
 }
 
-.first-view{
-	height: 100vh;
+.first-view {
 	overflow: hidden;
+	//position: relative;
 }
 .bold-move-step1 {
 	position: absolute;
@@ -52,12 +50,6 @@ label {
 		color: $font_white;
 		@include bold-font();
 	}
-	// .cover{
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	z-index: -1;
-	// 	width: 100%;
-	// }
 }
 .bold-move-step2{
 	
