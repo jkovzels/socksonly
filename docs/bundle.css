@@ -1526,3 +1526,14 @@ label {
   background-size: cover;
   background-position: center top; }
 
+h1 {
+  font-family: "Arial Black", Sans-Serif;
+  font-weight: 900;
+  font-size: 20vw;
+  letter-spacing: -0.05em;
+  line-height: 0.9em;
+  text-transform: uppercase;
+  margin: 0;
+  vertical-align: text-top;
+  font-size: 10rem; }
+

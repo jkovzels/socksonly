@@ -79,3 +79,8 @@ label {
 	background-size: cover;
 	background-position: center top;
 }
+
+h1{
+	@include bold-font();
+	font-size: 10rem;
+}

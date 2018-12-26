@@ -16,13 +16,9 @@ Then run 'ncu -u' or `ncu -a` to *really* update the files.
 
 Go ahead and run 'npm run build' from terminal (use ``CTRL + ` `` to open terminal).
 
-If everhing works try `npm run server`. It will open browser at `http://localhost:8080/`.
+If everhing works try `npm run server`. It will open browser at `http://localhost:8080/`. BTW to stop the server press `CTRL + C` to terminal.
 
 Those commands are defines `package.json`'s `scripts` section.
 
 Also `npm install http-server -g` and run `http-server`
-
-
-
-
 

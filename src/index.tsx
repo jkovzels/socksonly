@@ -3,11 +3,11 @@ import './styles/main';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { LandingView } from './components/LandingView';
+import { ComingSoonView } from './components/ComingSoonView';
 
 console.log("Socks on, up and running");
 
 ReactDOM.render(
-    <LandingView/>,
+    <ComingSoonView/>,
     document.getElementById("root")
 );
